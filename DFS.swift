@@ -31,4 +31,4 @@ func DFS<T>(graph: [T : [T]],  first: T) -> [T] {
     return visitedQueue
 }
 
-print(DFS(graph: testGraph, first: "A"))
+print(DFS(graph: testGraph, first: "A"))// A C F B E D 
