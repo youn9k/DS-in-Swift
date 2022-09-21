@@ -27,19 +27,11 @@ struct DoubleStackQueue<T> {
     }
     
     var first: T? {
-        if outBox.isEmpty {
-            return inBox.first
-        } else {
-            return outBox.last
-        }
+        return outBox.isEmpty ? inBox.first : outBox.last
     }
     
     var last: T? {
-        if inBox.isEmpty {
-            return outBox.first
-        } else {
-            return inBox.last
-        }
+        return inBox.isEmpty ? outBox.first : inBox.last
     }
     
     mutating func enqueue(_ element: T) {
