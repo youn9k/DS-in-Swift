@@ -33,6 +33,8 @@ struct DoubleStackQueue<T> {
     var last: T? {
         return inBox.isEmpty ? outBox.first : inBox.last
     }
+
+    var list: [T] { outBox.reversed() + inBox }
     
     mutating func enqueue(_ element: T) {
         inBox.append(element)
